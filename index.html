@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sleepoose - Smart Sleep Habits 智慧睡眠習慣</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin:0; padding:0;
+      text-align:center;
+      background:#0f2033;
+      color:#fff;
+    }
+    .container { max-width:900px; margin:0 auto; padding:20px; }
+    h1 { font-size:32px; margin:20px 0; }
+
+    /* 桌面版：grid */
+    .screenshots {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+      gap:15px;
+      margin:30px 0;
+    }
+    .screenshots img {
+      width:100%;
+      max-width:200px;
+      border-radius:12px;
+      margin:0 auto;
+    }
+
+    /* 手機版：左右滑動 + 下一張圖半露出 + 高度完整顯示 */
+    @media (max-width: 768px) {
+      .screenshots {
+        display:flex;
+        overflow-x:auto;
+        gap:15px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+        padding:0 10px;
+      }
+      .screenshots img {
+        flex:0 0 75%;           /* 每張圖佔螢幕 75% 寬度，旁邊半露下一張 */
+        scroll-snap-align:start;
+        max-width:none;
+
+        height: 64vh;           /* 手機版高度 */
+        object-fit: contain;    /* 保持整張圖完整顯示 */
+        border-radius:12px;
+        background:#0f2033;     /* 避免黑邊空白 */
+      }
+      .swipe-hint {
+        display:block;
+        font-size:14px;
+        color:#aaa;
+        margin-top:8px;
+      }
+    }
+
+    .download { margin:30px 0; }
+    .download a, .download div {
+      display:inline-block;
+      margin:10px;
+      text-align:center;
+      text-decoration:none;
+      color:#fff;
+    }
+    .download a:link,
+    .download a:visited,
+    .download a:hover,
+    .download a:active {
+      color:#fff;
+    }
+    .download img { height:50px; display:block; margin:0 auto 8px; }
+    .soon { color:#ccc; font-size:14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sleepoose</h1>
+    <h2>Smart Sleep Habits 智慧睡眠習慣</h1>
+
+
+    <!-- screenshot 區塊 -->
+    <div class="screenshots">
+      <img src="images/111.png" alt="screenshot 1">
+      <img src="images/222.png" alt="screenshot 2">
+      <img src="images/333.png" alt="screenshot 3">
+      <img src="images/444.png" alt="screenshot 4">
+    </div>
+
+    <!-- download 區塊 -->
+    <div class="download">
+      <a href="images/sleepoose.apk" target="_blank">
+        <img src="images/apk.png" alt="Download APK">
+        <span>立即率先試用</span>
+      </a>
+      <br><br>
+      <div>
+        <img src="images/appstore.png" alt="App Store">
+        <span class="soon">iOS 即將推出</span>
+      </div>
+      <div>
+        <img src="images/googleplay.png" alt="Google Play">
+        <span class="soon">Android 即將推出</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
